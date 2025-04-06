@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badkamer Vloerverwarming Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex justify-center items-center min-h-screen bg-gray-100 p-5">
+
+    <div class="w-full max-w-md bg-white shadow-lg rounded-xl p-6 space-y-4">
+        <h2 class="text-2xl font-bold text-gray-700">Badkamer Vloerverwarming</h2>
+
+        <!-- Temperature Modes -->
+        <div class="flex justify-between text-lg">
+            <span class="font-semibold">Comfort:</span>
+            <span class="text-blue-600">20°C</span>
+        </div>
+
+        <div class="flex justify-between text-lg">
+            <span class="font-semibold">Eco:</span>
+            <span class="text-green-600">15°C</span>
+        </div>
+
+        <!-- Schedule -->
+        <div class="bg-gray-100 p-3 rounded-lg">
+            <p class="text-sm text-gray-500">Schedule:</p>
+            <p class="font-medium text-gray-700">badkamer_vloerverwarming_schedule</p>
+        </div>
+
+        <!-- Outside Temperature -->
+        <div class="flex justify-between text-lg">
+            <span class="font-semibold">Outside Temp. Threshold:</span>
+            <span class="text-red-500">12°C</span>
+        </div>
+
+        <!-- Presence & Away Mode -->
+        <div class="flex flex-col space-y-2">
+            <div class="flex justify-between">
+                <span class="font-semibold">Away Scheduler:</span>
+                <span class="text-gray-600">Disabled</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="font-semibold">Presence Mode:</span>
+                <span class="text-gray-600">Disabled</span>
+            </div>
+        </div>
+
+        <!-- People -->
+        <div class="bg-gray-100 p-3 rounded-lg">
+            <p class="text-sm text-gray-500">People in Home:</p>
+            <ul class="list-disc list-inside text-gray-700">
+                <li>Person A</li>
+                <li>Person B</li>
+            </ul>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex justify-between space-x-2">
+            <button class="w-1/2 bg-blue-500 text-white font-bold py-2 rounded-lg hover:bg-blue-600">Increase
+                Temp</button>
+            <button class="w-1/2 bg-red-500 text-white font-bold py-2 rounded-lg hover:bg-red-600">Decrease
+                Temp</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Thermostat Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jscharting.com/latest/jscharting.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-blue-600 text-white py-4 text-center text-2xl font-bold">
+        Smart Thermostat Control - C16 WiFi Thermostat
+    </header>
+
+    <div class="container mx-auto p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Current Temperature -->
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+            <h2 class="text-xl font-semibold">Current Temperature</h2>
+            <p class="text-blue-600 text-4xl font-bold mt-2" id="current-temp">22°C 🌡️</p>
+            <div id="tempGauge" class="w-full h-40"></div>
+        </div>
+
+        <!-- Target Temperature -->
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+            <h2 class="text-xl font-semibold">Target Temperature</h2>
+            <p class="text-green-600 text-4xl font-bold mt-2" id="target-temp">24°C 🎯</p>
+        </div>
+
+        <!-- Heater Status -->
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+            <h2 class="text-xl font-semibold">Heater Status</h2>
+            <p class="text-red-500 text-2xl font-bold mt-2" id="heater-status">ON 🔥</p>
+        </div>
+
+        <!-- HVAC Mode -->
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+            <h2 class="text-xl font-semibold">HVAC Mode</h2>
+            <select id="hvac-mode" class="mt-2 p-2 border rounded w-full">
+                <option value="heating">Heating</option>
+                <option value="cooling">Cooling</option>
+                <option value="off">Off</option>
+                <option value="auto">Auto</option>
+            </select>
+        </div>
+
+        <!-- Power Usage -->
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+            <h2 class="text-xl font-semibold">Power Consumption</h2>
+            <p class="text-yellow-600 text-3xl font-bold mt-2" id="power-usage">1.5 kWh ⚡</p>
+            <div id="powerGauge" class="w-full h-40"></div>
+        </div>
+
+        <!-- Temperature Controls -->
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+            <h2 class="text-xl font-semibold">Adjust Temperature</h2>
+            <div class="flex justify-center mt-4">
+                <button class="bg-blue-500 text-white font-bold px-6 py-2 mx-2 rounded-lg hover:bg-blue-700"
+                    id="increase-temp">🔼 Increase</button>
+                <button class="bg-red-500 text-white font-bold px-6 py-2 mx-2 rounded-lg hover:bg-red-700"
+                    id="decrease-temp">🔽 Decrease</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-gray-500 text-sm py-4 mt-6">
+        &copy; 2025 Smart Thermostat Inc.
+    </footer>
+
+    <script>
+        let currentTemp = 22;
+        let targetTemp = 24;
+        let hvacMode = "heating";
+        let heaterStatus = "ON";
+        let powerUsage = 1.5;
+
+        document.getElementById('increase-temp').addEventListener('click', () => {
+            if (targetTemp < 40) {
+                targetTemp += 5;
+                document.getElementById('target-temp').textContent = `${targetTemp}°C 🎯`;
+                updateGauges();
+            }
+        });
+
+        document.getElementById('decrease-temp').addEventListener('click', () => {
+            if (targetTemp > 10) {
+                targetTemp -= 5;
+                document.getElementById('target-temp').textContent = `${targetTemp}°C 🎯`;
+                updateGauges();
+            }
+        });
+
+        document.getElementById('hvac-mode').addEventListener('change', (event) => {
+            hvacMode = event.target.value;
+            document.getElementById('heater-status').textContent = hvacMode === "off" ? "OFF ❄️" : "ON 🔥";
+        });
+
+        function updateGauges() {
+            JSC.chart('tempGauge', {
+                type: 'gauge',
+                series: [{
+                    points: [{ y: currentTemp }]
+                }]
+            });
+            JSC.chart('powerGauge', {
+                type: 'gauge',
+                series: [{
+                    points: [{ y: powerUsage * 10 }]
+                }]
+            });
+        }
+
+        updateGauges();
+    </script>
+</body>
+
+</html>

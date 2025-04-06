@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR Floor Thermostat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex justify-center items-center min-h-screen bg-gray-100 p-5">
+
+    <div class="w-full max-w-lg bg-white shadow-lg rounded-xl p-6 space-y-4">
+        <h2 class="text-2xl font-bold text-gray-700 flex items-center">
+            <span class="mr-2">BR Floor Thermostat</span>
+            <span class="text-blue-500 text-xl">🌡️</span>
+        </h2>
+
+        <!-- Current Temperature -->
+        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+            <span class="font-semibold">Current Temperature:</span>
+            <span class="text-blue-600 text-xl font-bold">17°C 🌡️</span>
+        </div>
+
+        <!-- Target Temperature -->
+        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+            <span class="font-semibold">Target Temperature:</span>
+            <span class="text-green-600 text-lg font-bold">17°C 🎯</span>
+        </div>
+
+        <!-- Heater Status -->
+        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+            <span class="font-semibold">Heater:</span>
+            <span class="text-red-500 font-bold">Off ❄️</span>
+        </div>
+
+        <!-- HVAC Mode -->
+        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+            <span class="font-semibold">HVAC Mode:</span>
+            <span class="text-gray-700 font-bold">Off ⏳</span>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex justify-between space-x-2">
+            <button class="w-1/2 bg-blue-500 text-white font-bold py-2 rounded-lg hover:bg-blue-600">
+                Increase Temp 🔼
+            </button>
+            <button class="w-1/2 bg-red-500 text-white font-bold py-2 rounded-lg hover:bg-red-600">
+                Decrease Temp 🔽
+            </button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
