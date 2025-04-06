@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+  /* +92 344 6791378 hina */
+}
+
+.container {
+  background-color: #c3c3c3;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  box-shadow:inset 0 0 20px 10px rgb(0 0 0);
+  width: 300px;
+  text-align: center;
+  gap: 5px;
+  overflow: hidden;
+}
+
+h1 {
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #524646;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: blue;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li button {
+  background-color: red;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold; 
+  margin: 3px;
+}
+
+li button:hover {
+  background-color: rgb(202, 29, 29);
+}
